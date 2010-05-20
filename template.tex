@@ -1,0 +1,59 @@
+% Shellex Y <5h3ll3x@gmail.com>
+%
+\documentclass[]{nenuthesis}
+
+\setcounter{secnumdepth}{4}
+
+% 定义所有的eps文件在 figures 子目录下
+\graphicspath{{figures/}}
+
+\begin{document}
+  %论文题目：{中文}{英文}
+  \nstitle{东北师范大学软件学院学位论文模板}{Thesis Template of NENU}
+  %作者：{中文姓名}{英文}{学号}
+  \nsauthor{韦永隆}{Yonglong Wei}{1291406082}
+  %指导教师：{导师中文名}{导师英文名}
+  \nsmentor{大老板}{Big Boss}
+  %专业信息：{专业名称}{年级}
+  \nsmajor{软件工程}{2006}
+  %学院信息：{学院中文}{学院英文}{主题}
+  \nscollege{软件学院}{Department of Software}{Software Engineering}
+  %日期：{Submitted Date}
+  \nsdate{May 1, 2010}
+
+%==============================================================
+
+  %封面
+  \input{pages/cover}
+
+  \frontmatter   
+  \pagenumbering{Roman}
+
+  %中文摘要
+  \include{pages/absc}
+  %英文摘要
+  \include{pages/abse}
+
+  %目次页
+  \chaptermark{目录}
+  \addcontentsline{toc}{chapter}{目录}
+  \tableofcontents
+  \mainmatter
+
+  % 开始正文 -----------
+
+  % 绪论 & 相关工作  
+  \include{pages/intro}
+
+  \include{pages/relateworks}
+
+  % 第三章 样本测试
+  \include{pages/chap03}
+
+
+  \backmatter %结束章节自动编号
+
+\bibliographystyle{plain}
+\bibliography{ref/refs}
+\end{document}
+
