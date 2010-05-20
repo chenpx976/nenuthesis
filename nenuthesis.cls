@@ -70,6 +70,7 @@
 \RequirePackage{titletoc}
 
 % 字体设置 -----------------------------------------------
+%% 中文字体太多都有版权了\ldots
 \RequirePackage{xunicode,xltxtra,fontspec}
 \RequirePackage[CJKnumber,CJKtextspaces,CJKmathspaces,slantfont,boldfont]{xeCJK}
 \punctstyle{kaiming}
