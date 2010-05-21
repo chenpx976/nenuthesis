@@ -8,6 +8,10 @@
 \def\version{0.0.1}
 
 \LoadClass[a4paper,titlepage,11pt,twoside,openany]{book}
+\newif\ifnenuIsZhCN
+\DeclareOption{zhcn}{\nenuIsZhCNtrue}
+\ExecuteOptions{zhcn}
+\ProcessOptions\relax
 
 \RequirePackage{ifpdf,ifxetex}
 
@@ -47,18 +51,6 @@
 \RequirePackage{amsthm}
 \RequirePackage{amssymb}
 
-\newtheorem{assumption}{Assumption}[chapter]
-\newtheorem{definition}{Definition}[chapter]
-\newtheorem{proposition}{Proposition}[chapter]
-\newtheorem{lemma}{Lemma}[chapter]
-\newtheorem{theorem}{Theorem}[chapter]
-\newtheorem{axiom}{Axiom}[chapter]
-\newtheorem{corollary}{Corollary}[chapter]
-\newtheorem{exercise}{Exercise}[chapter]
-\newtheorem{example}{Example}[chapter]
-\newtheorem{remark}{Remark}[chapter]
-\newtheorem{problem}{Problem}[chapter]
-\newtheorem{conjecture}{Conjecture}[chapter]
 
 %% 页边距:上 2.5cm,下 2.5cm,左 3cm,右 2.5cm;装订线位置:左侧,1.5cm。
 \RequirePackage[top=2.5cm,bottom=2.5cm,left=3.0cm,right=2.5cm,includehead,includefoot]{geometry}
@@ -221,4 +213,41 @@
 \renewcommand{\headrulewidth}{0.4pt} \renewcommand{\footrulewidth}{0.4pt}
 \pagestyle{fancy}
 
+% 本地化 -------------------------------------------
+\ifnenuIsZhCN
+    \newtheorem{assumption}{假设}[chapter]
+    \newtheorem{definition}{定义}[chapter]
+    \newtheorem{proposition}{命题}[chapter]
+    \newtheorem{lemma}{引理}[chapter]
+    \newtheorem{theorem}{定理}[chapter]
+    \newtheorem{axiom}{公理}[chapter]
+    \newtheorem{corollary}{推论}[chapter]
+    \newtheorem{exercise}{练习}[chapter]
+    \newtheorem{example}{例}[chapter]
+    \newtheorem{remark}{注释}[chapter]
+    \newtheorem{problem}{问题}[chapter]
+    \newtheorem{conjecture}{猜想}[chapter]
 
+    \renewcommand\contentsname{目\hspace{1em}录}
+    \renewcommand\listfigurename{插图索引}
+    \renewcommand\listtablename{表格索引}
+    \newcommand\listequationname{公式索引}
+    \newcommand\equationname{公式}
+    \renewcommand\bibname{参考文献}
+    \renewcommand\indexname{索引}
+    \renewcommand\figurename{图}
+    \renewcommand\tablename{表}
+\else
+    \newtheorem{assumption}{Assumption}[chapter]
+    \newtheorem{definition}{Definition}[chapter]
+    \newtheorem{proposition}{Proposition}[chapter]
+    \newtheorem{lemma}{Lemma}[chapter]
+    \newtheorem{theorem}{Theorem}[chapter]
+    \newtheorem{axiom}{Axiom}[chapter]
+    \newtheorem{corollary}{Corollary}[chapter]
+    \newtheorem{exercise}{Exercise}[chapter]
+    \newtheorem{example}{Example}[chapter]
+    \newtheorem{remark}{Remark}[chapter]
+    \newtheorem{problem}{Problem}[chapter]
+    \newtheorem{conjecture}{Conjecture}[chapter]
+\fi
