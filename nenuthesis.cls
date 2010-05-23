@@ -22,6 +22,7 @@
 \RequirePackage{titlesec}
 \RequirePackage{titletoc}
 \RequirePackage{url}
+\RequirePackage[CJKbookmarks,bookmarks=true,bookmarksnumbered=true]{hyperref}
 \urlstyle{tt}
 
 \bibliographystyle{plain}
